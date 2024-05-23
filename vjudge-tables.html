@@ -19,6 +19,19 @@
             document.querySelectorAll('.button-container button').forEach((btn,i)=>{
                 btn.classList.toggle('active-btn',i===index)
             });
+            onRankLoad();
+        }
+        
+        function onRankLoad(){
+            const iframe = document.querySelector('.iframe-container.active iframe');
+            console.log(iframe);
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            console.log(iframeDocument);
+            if (iframeDocument) {
+                const iframeContent = iframeDocument.getElementById('target').innerHTML;
+                console.log(iframeContent);
+                document.querySelector('.iframe-container.active').innerHTML = iframeContent;
+            }
         }
         function joinGroup(){
             window.open(document.querySelector('.iframe-container.active iframe').src,'_blank').focus();
