@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Switcher</title>
+    <style>
+        .iframe-container{display:none}
+        .iframe-container.active{display:block}
+        .button-container button{margin:5px;padding:10px;width:120px;font-size:16px;background-color:#4caf50;color:#fff;border:none;border-radius:4px;cursor:pointer;}
+        .button-container .active-btn{background-color:#2e7d32;}
+        .large-btn{width:330px;padding:10px;}
+    </style>
+    <script>
+        function showIframe(index){
+            document.querySelectorAll('.iframe-container').forEach((iframe,i)=>{
+                iframe.classList.toggle('active',i===index)
+            });
+            document.querySelectorAll('.button-container button').forEach((btn,i)=>{
+                btn.classList.toggle('active-btn',i===index)
+            });
+            onRankLoad();
+        }
+        
+        function onRankLoad(){
+            const iframe = document.querySelector('.iframe-container.active iframe');
+            console.log(iframe);
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            console.log(iframeDocument);
+            if (iframeDocument) {
+                const iframeContent = iframeDocument.getElementById('rank').innerHTML;
+                console.log(iframeContent);
+                document.querySelector('.iframe-container.active').innerHTML = iframeContent;
+            }
+        }
+        function joinGroup(){
+            window.open(document.querySelector('.iframe-container.active iframe').src,'_blank').focus();
+        }
+    </script>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="showIframe(0)">Beginner</button>
+        <button onclick="showIframe(1)">Junior</button>
+        <button onclick="showIframe(2)">Senior</button><br>
+        <button class="large-btn" onclick="joinGroup()">Join Group</button>
+    </div>
+    <div class="iframe-container active">
+        <iframe allowfullscreen frameborder="0" height="600" src="https://vjudge.net/contest/630486#rank" width="1280"></iframe>
+    </div>
+    <div class="iframe-container">
+        <iframe allowfullscreen frameborder="0" height="600" src="https://vjudge.net/contest/630486#rank" width="1280"></iframe>
+    </div>
+    <div class="iframe-container">
+        <iframe allowfullscreen frameborder="0" height="600" src="https://vjudge.net/contest/630486#rank" width="1280"></iframe>
+    </div>
+</body>
+</html>
