@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PST Community Overview</title>
+    <title>Foldable FAQ</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 20px;
         }
-        .container {
+        .faq-container {
             max-width: 800px;
             margin: auto;
             background: #fff;
@@ -19,111 +19,83 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .section {
-            margin-bottom: 20px;
+        .faq {
+            margin-bottom: 10px;
         }
-        .section h2 {
+        .faq button {
             background: #4CAF50;
             color: #fff;
             padding: 10px;
+            border: none;
             border-radius: 4px;
-            margin-top: 0;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
         }
-        .section p {
-            margin: 10px 0;
+        .faq button:focus {
+            outline: none;
         }
-        .track, .feature {
-            background: #e7f3e7;
+        .faq-content {
+            display: none;
             padding: 10px;
+            background: #e7f3e7;
             border-radius: 4px;
-            margin-bottom: 10px;
-        }
-        .track h3, .feature h3 {
-            margin-top: 0;
-            color: #333;
-        }
-        .feature {
-            background: #f9f9f9;
-        }
-        ul {
-            padding-left: 20px;
+            margin-top: 5px;
         }
     </style>
+    <script>
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="section">
-            <h2>How PST Community Works</h2>
-            <p>PST Community operates as a structured, yet flexible, learning environment designed to cater to individuals at various stages of their programming journey. Here’s how it works:</p>
+    <div class="faq-container">
+        <div class="faq">
+            <button onclick="toggleFaq('faq1')">What is PST Community?</button>
+            <div id="faq1" class="faq-content">
+                <p>PST Community offers a structured yet flexible learning environment for various stages of programming.</p>
+            </div>
         </div>
         
-        <div class="section">
-            <h2>Diverse Learning Tracks</h2>
-            <div class="track">
-                <h3>Beginner Track</h3>
-                <p>For those new to coding, this track covers foundational topics such as conditions, loops, arrays, strings, and basic algorithms.</p>
-            </div>
-            <div class="track">
-                <h3>Junior Track</h3>
-                <p>For those with some experience, this track delves into intermediate topics like static range queries, binary search, two pointers, recursion, and dynamic programming.</p>
-            </div>
-            <div class="track">
-                <h3>Senior Track</h3>
-                <p>For advanced learners, this track explores complex subjects including dynamic programming, graph algorithms, advanced data structures, and optimization techniques.</p>
+        <div class="faq">
+            <button onclick="toggleFaq('faq2')">What learning tracks are available?</button>
+            <div id="faq2" class="faq-content">
+                <p>There are three learning tracks: Beginner, Junior, and Senior, each covering topics suitable for different experience levels.</p>
             </div>
         </div>
-
-        <div class="section">
-            <h2>Weekly Sessions</h2>
-            <div class="feature">
-                <h3>Structure</h3>
-                <p>Each track features weekly sessions that cover specific topics, allowing members to progress systematically.</p>
-                <p>Sessions include a mix of lectures, hands-on coding exercises, and interactive discussions to reinforce learning.</p>
+        
+        <div class="faq">
+            <button onclick="toggleFaq('faq3')">How do weekly sessions work?</button>
+            <div id="faq3" class="faq-content">
+                <p>Weekly sessions include lectures, hands-on coding exercises, and interactive discussions to help members progress systematically.</p>
             </div>
         </div>
-
-        <div class="section">
-            <h2>Expert Mentorship</h2>
-            <div class="feature">
-                <h3>Guidance and Support</h3>
-                <p>Sessions are led by experienced mentors who provide guidance, answer questions, and offer personalized feedback.</p>
-                <p>Mentors are available to help with difficult concepts, provide career advice, and support members' overall development.</p>
+        
+        <div class="faq">
+            <button onclick="toggleFaq('faq4')">What kind of mentorship is available?</button>
+            <div id="faq4" class="faq-content">
+                <p>Experienced mentors lead sessions, provide guidance, answer questions, and offer personalized feedback.</p>
             </div>
         </div>
-
-        <div class="section">
-            <h2>Collaborative Environment</h2>
-            <div class="feature">
-                <h3>Peer Interaction</h3>
-                <p>Members are encouraged to participate in group activities, code reviews, and peer-to-peer learning.</p>
-                <p>The community fosters a supportive atmosphere where members can share their knowledge, ask for help, and collaborate on projects.</p>
+        
+        <div class="faq">
+            <button onclick="toggleFaq('faq5')">What resources are provided?</button>
+            <div id="faq5" class="faq-content">
+                <p>Members have access to tutorials, coding challenges, past session recordings, and recommended reading materials.</p>
             </div>
         </div>
-
-        <div class="section">
-            <h2>Resource Library</h2>
-            <div class="feature">
-                <h3>Resources</h3>
-                <p>The community provides access to a wide range of resources including tutorials, coding challenges, past session recordings, and recommended reading materials.</p>
-                <p>Members can use these resources to supplement their learning and practice at their own pace.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Community Engagement</h2>
-            <div class="feature">
-                <h3>Events and Networking</h3>
-                <p>Beyond structured learning, PST Community hosts events such as hackathons, coding competitions, and guest speaker sessions.</p>
-                <p>Members can network with peers, share their achievements, and celebrate milestones together.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Flexible Participation</h2>
-            <div class="feature">
-                <h3>Accessibility</h3>
-                <p>Members can join sessions live or access recorded content at their convenience.</p>
-                <p>The community is designed to accommodate different schedules and learning paces, making it accessible to everyone.</p>
+        
+        <div class="faq">
+            <button onclick="toggleFaq('faq6')">How can I participate?</button>
+            <div id="faq6" class="faq-content">
+                <p>Members can join live sessions or access recorded content at their convenience, accommodating different schedules and learning paces.</p>
             </div>
         </div>
     </div>
