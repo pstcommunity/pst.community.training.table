@@ -5,47 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PST Community</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
         }
         .container {
             display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
         }
         .content {
             flex: 1;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.5rem;
+            line-height: 1.5;
         }
         .sidebar {
-            width: 250px;
-            background-color: #f4f4f4;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        }
-        .sidebar img {
-            max-width: 100%;
-            height: auto;
-        }
-        .powered-by {
-            margin-top: 20px;
-            text-align: center;
+            display: none; /* Hides the sidebar, so the content takes the full page */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <h1>Welcome to PST Community</h1>
-            <p>
-                A dynamic and inclusive platform dedicated to fostering growth, learning, and collaboration among passionate individuals at all stages of their programming journey. Whether you're just starting, seeking to refine your skills, or looking to tackle advanced challenges, PST Community offers a wealth of resources and support tailored to your needs.
-            </p>
-        </div>
-        <div class="sidebar">
-            <div class="powered-by">
-                <p>Powered by</p>
-                <a href="https://ifpc.global/" target="_blank">
-                    <img src="https://pstcommunity.github.io/ifpc.png" alt="IFPC Logo">
+            <div>
+                <h1>Welcome to PST Community</h1>
+                <p>
+                    A dynamic and inclusive platform dedicated to fostering growth, learning, and collaboration among passionate individuals at all stages of their programming journey. Whether you're just starting, seeking to refine your skills, or looking to tackle advanced challenges, PST Community offers a wealth of resources and support tailored to your needs.
+                </p>
             </div>
         </div>
     </div>
